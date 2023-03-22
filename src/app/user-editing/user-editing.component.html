@@ -1,0 +1,94 @@
+<div class="spacer"></div>
+<div class="Formulario">
+    <div class="Data">
+        <div class="response">
+            <form [formGroup]="updateform" >
+                <div class="columna1">
+                    <label>
+                        Nombre:
+                        <div class="inp"
+                            style="display: flex; justify-content: center; gap: 10px; width: 85% !important; height: 40px; ">
+                            <input  id="name" type="text" formControlName="name" name="name" value="{{useri.name}}"  [attr.disabled]="updateform.get('name')?.disabled ? true : null" >
+                            <button (click)="toggleInput(inputs[0])">✏️</button>
+                        </div>
+                    </label>
+                    <br>
+                    <label>
+                        Rol:
+                        <div class="inp"
+                            style="display: flex; justify-content: center; gap: 10px; width: 85% !important;min-width: 85% !important; height: 40px;">
+                            <select id="role" formControlName="role" name="role" value="{{useri.role}}" [attr.disabled]="updateform.get('role')?.disabled ? true : null">
+                                <option value="Admin" style="width: 85%;">Administrador</option>
+                                <option value="user">Usuario</option>
+                                <option value="Usuario">Usuario</option>
+                                <option value="Invitado">Invitado</option>
+                            </select>
+                            <button (click)="toggleInput(inputs[1])">✏️</button>
+                        </div>
+                    </label>
+                    
+                    <br>
+                    <label>
+                        Usuario:
+                        <div class="inp"
+                            style="display: flex; justify-content: center; gap: 10px; width: 85% !important; height: 40px;">
+                            <input  id="username" type="text" formControlName="username" name="username" value="{{useri.username}}"  [attr.disabled]="updateform.get('username')?.disabled ? true : null" >
+                            <button (click)="toggleInput(inputs[3])">✏️</button>
+                        </div>
+                    </label>
+                    <br>
+                    <label>
+                        Género:
+                        
+                        <div class="genero" style="display: flex; justify-content: center; width: 100%; flex-direction: row !important;" >
+                            <mat-radio-group formControlName="gender" name="gender" aria-label="Genero" value="{{useri.gender}}" style="display: flex; flex-direction: row; justify-content: center; align-items: center;">
+                                <mat-radio-button value="Hombre" style="width: 100px;">Hombre</mat-radio-button>
+                                <mat-radio-button value="Mujer" style="width: 100px;">Mujer</mat-radio-button>
+                            </mat-radio-group>
+                        </div>
+                        
+                    </label>
+                </div>
+                <div class="columna2">
+                    <label>
+                        Correo electrónico:
+                        <div class="inp"
+                            style="display: flex; justify-content: center; gap: 10px; width: 85% !important; height: 40px;">
+                            <input type="email" formControlName="email" name="email" value="{{useri.email}}" [attr.disabled]="updateform.get('email')?.disabled ? true : null">
+                            <button (click)="toggleInput(inputs[4])">✏️</button>
+                        </div>
+                    </label>
+                    <br>
+                    <label>
+                        Fecha de creación:
+                        <div class="inp"
+                            style="display: flex; justify-content: center; gap: 10px; width: 100%; height: 40px;">
+                            <input style="text-align: center; width: 85%;" type="text"  name="created" disabled="" value="{{useri.create}}">
+                        </div>
+                    </label>
+                    <br>
+                    <label>
+                        Contraseña:
+                        <div class="inp"
+                            style="display: flex; justify-content: center; gap: 10px; width: 100%; height: 40px;">
+                            <button (click)="ChangePassowrd()" style="width: 85%; border: 0; background-color: #480CA8 ; color: white; transition: background-color 0.5s" onmouseover="this.style.backgroundColor='#7d35f1'" onmouseout="this.style.backgroundColor='#480CA8'"> Restablecer Contraseña</button>
+                        </div>
+                    </label>
+                    <br>
+                    
+                    
+                    <label>
+                        Usuario Activado:
+                        <label class="switch" style="width: 120px;">
+                          <input type="checkbox" id="switchInput" formControlName="isactive" name="isActive" [checked]="useri.autorizado" #switchInput>
+                          <span class="slider"></span>
+                        </label>
+                      </label>
+                    <br>
+                </div>
+                <div class="Boton"><button type="submit" (click)="onSubmit()" routerLink="">Actualizar</button></div>
+
+            </form>
+        </div>
+    </div>
+</div>

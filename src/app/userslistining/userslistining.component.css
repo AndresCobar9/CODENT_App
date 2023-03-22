@@ -1,0 +1,158 @@
+
+.Cartas{
+    
+    width: 100vw;
+    min-height: 100%;
+    background-image: linear-gradient(to right bottom, #480ca8, #530bac, #5e0bb0, #680ab3, #7209b7);
+    
+}
+
+
+.card{
+    background-color: rgb(206, 205, 205);
+    box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.747);
+    min-height: 450px;
+    min-width: 300px;
+    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.col{
+    min-height: 450px;
+    max-height: 400px;
+    min-width: 330px;
+    max-width: 330px;
+    padding: 0px;
+}
+.row{
+    
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 40px;
+    min-height: 490px;
+    
+}
+.container{
+    padding-bottom: 100px;
+}
+.nameuser{
+    font-size: 30px;
+    padding-top: 15px;
+}
+
+.radius-15 {
+    border-radius: 15px;
+}
+.texto{
+  margin-top: 30px;
+    height: 200px;
+    width: 280px;
+}
+button {
+   
+    position: relative;
+    background-color: #6513e9;
+    border-radius: 5px;
+    box-shadow: #360980 0px 4px 0px 0px;
+    padding: 15px;
+    background-repeat: no-repeat;
+    box-sizing: border-box;
+    width: 154px;
+    height: 49px;
+    color: #fff;
+    border: none;
+    font-size: 20px;
+    transition: all .3s ease-in-out;
+    z-index: 1;
+    overflow: hidden;
+    margin-top: auto;
+    bottom: 0;
+  }
+  
+  button::before {
+    content: "";
+    background-color: #8f4afd;
+    width: 0;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    transition: width 700ms ease-in-out;
+    display: inline-block;
+  }
+  
+  button:hover::before {
+    width: 100%;
+  }
+
+  .lock-checkbox {
+    position: relative;
+    display: inline-block;
+    width: 40px;
+    height: 40px;
+    margin-right: 10px;
+  }
+  
+  .lock-checkbox input[type="checkbox"] {
+    opacity: 0;
+    width: 0;
+    height: 0;
+  }
+  
+  .lock-icon {
+    fill: #00ff40;
+    
+    width: 34px;
+    height: 34px;
+    transition: all 0.3s;
+    cursor: pointer;
+  }
+  
+  .UserCheck{
+    text-align: center;
+    font-size: 16px;
+    line-height: 40px;
+  }
+  .Autorizado{
+    height: 40px;
+    display: flex;
+    justify-content: space-evenly;
+  }
+
+  .lock-checkbox2 {
+    position: relative;
+    display: inline-block;
+    width: 40px;
+    height: 40px;
+    margin-right: 10px;
+  }
+  
+  .lock-checkbox2 input[type="checkbox"] {
+    opacity: 0;
+    width: 0;
+    height: 0;
+  }
+  
+  .lock-icon2 {
+    fill: red;
+    
+    width: 34px;
+    height: 34px;
+    transition: all 0.3s;
+    cursor: pointer;
+  }
+ 
+  .usuario{
+    display: flex;
+    font-size: 16px;
+    justify-content: space-between;
+  }
+  
+  
+  

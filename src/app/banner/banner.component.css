@@ -1,0 +1,86 @@
+.Welcome{
+    width: 100vw;
+    height: 100vh;  
+    background-color: #03045E;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100%25' height='100%25' viewBox='0 0 800 400'%3E%3Cdefs%3E%3CradialGradient id='a' cx='396' cy='281' r='514' gradientUnits='userSpaceOnUse'%3E%3Cstop offset='0' stop-color='%23560BAD'/%3E%3Cstop offset='1' stop-color='%2303045E'/%3E%3C/radialGradient%3E%3ClinearGradient id='b' gradientUnits='userSpaceOnUse' x1='400' y1='148' x2='400' y2='333'%3E%3Cstop offset='0' stop-color='%23F72585' stop-opacity='0'/%3E%3Cstop offset='1' stop-color='%23F72585' stop-opacity='0.5'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect fill='url(%23a)' width='800' height='400'/%3E%3Cg fill-opacity='0.4'%3E%3Ccircle fill='url(%23b)' cx='267.5' cy='61' r='300'/%3E%3Ccircle fill='url(%23b)' cx='532.5' cy='61' r='300'/%3E%3Ccircle fill='url(%23b)' cx='400' cy='30' r='300'/%3E%3C/g%3E%3C/svg%3E");
+    background-attachment:fixed;
+    background-size:cover;
+    background-position: center center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+img{
+    height: 230px;
+    position:relative;
+    left: -10px;
+}
+
+.button {
+    display: flex;
+  }
+  
+  .box {
+    width: 70px;
+    height: 80px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 30px;
+    font-weight: 700;
+    color: #fff;
+    transition: all .8s;
+    cursor: pointer;
+    position: relative;
+    background: #48bfe3;
+    overflow: hidden;
+  }
+  
+  .box:before {
+    content: "C";
+    position: absolute;
+    top: 0;
+    background: #6930c3;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transform: translateY(100%);
+    transition: transform .4s;
+  }
+  
+  .box:nth-child(2)::before {
+    transform: translateY(-100%);
+    content: 'O';
+  }
+  
+  .box:nth-child(3)::before {
+    content: 'D';
+  }
+  
+  .box:nth-child(4)::before {
+    transform: translateY(-100%);
+    content: 'E';
+  }
+  
+  .box:nth-child(5)::before {
+    content: 'N';
+  }
+  .box:nth-child(6)::before {
+    transform: translateY(-100%);
+    content: 'T';
+  }
+  
+  .button:hover .box:before {
+    transform: translateY(0);
+  }
+  @media (max-width:456px){
+    .box {
+        width: 55px;
+        height: 65px;
+        font-size: 30px;
+    }
+
+  }

@@ -1,0 +1,18 @@
+.mat-column-Tratmientos{
+    width: 50px !important; 
+}
+
+body{
+    background-color: #480CA8;
+}
+@media (max-width:400px){
+
+
+body{
+    height: 120vh;
+   
+}
+.spacer{
+    height: 225px !important;
+}
+}

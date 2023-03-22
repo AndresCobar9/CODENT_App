@@ -1,0 +1,92 @@
+<body>
+  
+
+<div class="spacer" style="height: 300px;"></div>
+
+<div class="mat-elevation-z8" style="margin-left: 5%;margin-right: 5%;background-color: white;overflow-x: scroll; box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.466);">
+    
+    <mat-form-field style="background-color: white; border-radius: 20px;">
+        <mat-label>Buscar Paciente</mat-label>
+        <input matInput (keyup)="applyFilter($event)" placeholder="Search columns" #input>
+    </mat-form-field>
+
+    <table mat-table [dataSource]="dataSource" style="border-radius: 20px; overflow-x: scroll; max-width: 100%;">
+  
+      <!-- Position Column -->
+      <ng-container matColumnDef="ID">
+        <th style="text-align: center;" mat-header-cell *matHeaderCellDef> ID </th>
+        <td style="text-align: center;" mat-cell *matCellDef="let element"> {{element.id}} </td>
+      </ng-container>
+  
+      <!-- Name Column -->
+      <ng-container matColumnDef="Nombre">
+        <th style="text-align: center;" mat-header-cell *matHeaderCellDef> Nombre </th>
+        <td style="text-align: center;" mat-cell *matCellDef="let element"> {{element.nombre}} </td>
+      </ng-container>
+  
+      <!-- Weight Column -->
+      <ng-container matColumnDef="Apellido">
+        <th style="text-align: center;" mat-header-cell *matHeaderCellDef> Apellido </th>
+        <td style="text-align: center;" mat-cell *matCellDef="let element"> {{element.apellido}} </td>
+      </ng-container>
+  
+      <!-- Symbol Column -->
+      <ng-container matColumnDef="Edad">
+        <th style="width: 150px !important; text-align: center;" mat-header-cell *matHeaderCellDef> Edad </th>
+        <td style="text-align: center;"  mat-cell *matCellDef="let element"> {{element.edad}} </td>
+      </ng-container>
+
+      <!-- Symbol Column -->
+      <ng-container matColumnDef="Citas">
+        <th style="width: 150px !important; text-align: center;" mat-header-cell *matHeaderCellDef> Citas </th>
+        <td style="text-align: center;" mat-cell *matCellDef="let element">  <button mat-mini-fab color="primary" aria-label="Edit" (click)="Citas(element.id)">
+            <mat-icon>menu</mat-icon>   
+        </button> </td>
+      </ng-container>
+
+      <!-- Symbol Column -->
+      <ng-container matColumnDef="Ficha medica" >
+        <th style="width: 150px !important; text-align: center;" mat-header-cell *matHeaderCellDef> Ficha Medica </th>
+        <td style="text-align: center;" mat-cell *matCellDef="let element">  <button mat-mini-fab color="primary" aria-label="Edit" (click)="FichaMedica(element.fichamedica)">
+            <mat-icon>menu</mat-icon>
+        </button> </td>
+      </ng-container>
+  
+      <!-- Symbol Column -->
+      <ng-container matColumnDef="Tratamientos">
+        <th  style="width: 150px !important; text-align: center;"mat-header-cell *matHeaderCellDef> Tratamiento </th>
+        <td style="text-align: center;" mat-cell *matCellDef="let element">  <button mat-mini-fab color="primary" aria-label="Edit" (click)="Tratamiento(element)">
+          <mat-icon> beenhere</mat-icon>
+        </button> </td>
+      </ng-container>
+
+      <!-- Symbol Column -->
+      <ng-container matColumnDef="Plan de Tratamiento">
+        <th style="width: 150px !important; text-align: center;" mat-header-cell *matHeaderCellDef> Contabilidad </th>
+        <td style="text-align: center;" mat-cell *matCellDef="let element"> 
+            <button mat-mini-fab color="primary" aria-label="Edit" (click)="Contabilidad(element)">
+              <mat-icon>control_point</mat-icon>
+            </button>
+             </td>
+      </ng-container>
+
+       <!-- Symbol Column -->
+       <ng-container matColumnDef="Informacion">
+        <th style="width: 150px !important; text-align: center;" mat-header-cell *matHeaderCellDef> Informacion </th>
+        <td style="text-align: center;" mat-cell *matCellDef="let element"> 
+            <button mat-mini-fab color="primary" aria-label="Edit" (click)="Informacion(element)">
+              <mat-icon>info</mat-icon>
+            </button>
+             </td>
+      </ng-container>
+
+      <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+      <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+    </table>
+  
+    <mat-paginator [pageSizeOptions]="[5, 10, 20]"
+                   showFirstLastButtons
+                   aria-label="Select page of periodic elements">
+    </mat-paginator>
+  </div>
+</body>

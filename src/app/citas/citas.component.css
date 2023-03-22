@@ -1,0 +1,25 @@
+body{
+    height: 1100px;
+    background-color: #480CA8;
+}
+
+.calendario{
+    margin: 20px;
+    border-radius: 20px;
+}
+
+@media(max-width: 1160px){
+    .calendario{
+        width: 92vw !important;
+    }
+    .stylee{
+        margin-left: 1% !important;
+        margin-right: 1% !important
+    }
+    
+  }
+  @media(max-width:800px){
+    body{
+        height: 100%;
+    }
+  }
