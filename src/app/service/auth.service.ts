@@ -8,7 +8,7 @@ import { Observable } from 'rxjs';
 export class AuthService {
 
   constructor(private http:HttpClient) { }
-  apiurl='http://localhost:3000'
+  apiurl='https://web-production-e67b.up.railway.app'
 
   GetAll(){
     return this.http.get(this.apiurl + '/user/userslist')
