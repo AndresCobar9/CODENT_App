@@ -8,7 +8,7 @@ import { Observable } from 'rxjs';
 export class AuthService {
 
   constructor(private http:HttpClient) { }
-  apiurl='http://127.0.0.1:5000'
+  apiurl='https://api.codent.site'
 
   GetAll(){
     return this.http.get(this.apiurl + '/user/userslist')

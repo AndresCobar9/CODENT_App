@@ -4,6 +4,7 @@
 
 body{
     background-color: #480CA8;
+    min-height: 100vh;
 }
 @media (max-width:400px){
 
