@@ -8,12 +8,15 @@ import { Observable } from 'rxjs';
 export class AuthService {
 
   constructor(private http:HttpClient) { }
-  apiurl='https://api.codent.site'
+  apiurl='http://127.0.0.1:5000'
 
   GetAll(){
     return this.http.get(this.apiurl + '/user/userslist')
   }
 
+  deletePaciente(id:any){
+    return this.http.delete(this.apiurl + '/pacientes/delete/'+id)
+  }
   createDefaultUser(info: any){
     return this.http.post(this.apiurl + '/pacientes/AddCita/noUser',info)
   }

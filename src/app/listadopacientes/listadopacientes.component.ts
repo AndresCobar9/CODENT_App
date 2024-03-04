@@ -9,13 +9,16 @@ import { FichaodontoComponent } from '../fichaodonto/fichaodonto.component';
 import { TratamientosComponent } from '../tratamientos/tratamientos.component';
 import { ContabilidadComponent } from '../contabilidad/contabilidad.component';
 import { PacienteInfoComponent } from '../paciente-info/paciente-info.component';
-
+import Swal from'sweetalert2';
 @Component({
   selector: 'app-listadopacientes',
   templateUrl: './listadopacientes.component.html',
   styleUrls: ['./listadopacientes.component.css']
 })
 export class ListadopacientesComponent{
+
+  @ViewChild(MatPaginator) paginator: MatPaginator | undefined;
+
   constructor(private service:AuthService, private dialog:MatDialog){
 
     this.loaduser()
@@ -26,6 +29,30 @@ export class ListadopacientesComponent{
 
   dataSource: any
 
+  deleteP(id:any){
+    this.service.deletePaciente(String(id)).subscribe(
+      (res) => {
+        Swal.fire({
+          position: 'top',
+          icon: 'success',
+          title: 'Paciente eliminado',
+          showConfirmButton: false,
+          timer: 1500
+        })
+        this.loaduser()
+      },
+      (err) => {
+        Swal.fire({
+          position: 'top',
+          icon: 'error',
+          title: 'Error al eliminar',
+          showConfirmButton: false,
+          timer: 1500
+        })
+        console.error(err);
+      }
+    );
+  }
   Citas(id:any){
   
     this.dialog.open(CitapacienteComponent ,{
@@ -66,6 +93,7 @@ export class ListadopacientesComponent{
   applyFilter(event: Event) {
     const filterValue = (event.target as HTMLInputElement).value;
     this.dataSource.filter = filterValue.trim().toLowerCase();
+    this.dataSource.paginator = this.paginator;
   }
 
   loaduser(){
@@ -76,6 +104,7 @@ export class ListadopacientesComponent{
         
         this.paciente = res;
         this.dataSource =new MatTableDataSource(this.paciente)
+        this.dataSource.paginator = this.paginator;
         
       },
       (err) => {
@@ -84,6 +113,6 @@ export class ListadopacientesComponent{
     );
   }
 
-  displayedColumns: string[] = ['ID','Nombre','Apellido','Edad','Citas','Ficha medica', 'Tratamientos', 'Plan de Tratamiento', 'Informacion']
+  displayedColumns: string[] = ['ID','Nombre','Apellido','Edad','Citas','Ficha medica', 'Tratamientos', 'Plan de Tratamiento', 'Informacion', 'delete']
   
 }

@@ -22,6 +22,8 @@ constructor(private service: AuthService, private dialog: MatDialog) { }
 onDateClick(res: { dateStr: string }) {
   const fecha = res.dateStr;
   const eventos = this.filterEventsByDate(fecha);
+
+
   function formatEvent(event: any): string {
     return `<div style=" border: 1px solid black; border-radius:20px; margin-bottom:20px"> Paciente: ${event.title}<br>Hora: ${event.time}<br></div>`;
   }
