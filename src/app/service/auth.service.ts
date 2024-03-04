@@ -8,10 +8,14 @@ import { Observable } from 'rxjs';
 export class AuthService {
 
   constructor(private http:HttpClient) { }
-  apiurl='https://web-production-e67b.up.railway.app'
+  apiurl='https://api.codent.site'
 
   GetAll(){
     return this.http.get(this.apiurl + '/user/userslist')
+  }
+
+  createDefaultUser(info: any){
+    return this.http.post(this.apiurl + '/pacientes/AddCita/noUser',info)
   }
   
   login(user:any){
