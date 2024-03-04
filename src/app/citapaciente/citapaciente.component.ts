@@ -37,7 +37,7 @@ export class CitapacienteComponent {
   }
   deleteCita(id:any){
     const role = localStorage.getItem('role')
-    if(role == 'Paciente'){
+    if(role == 'Admin'){
     this.service.deleteCita(id).subscribe(res=>{
       window.location.reload()
     })

@@ -20,7 +20,7 @@ export class PacienteInfoComponent {
 
   habilitarCampos() {
     const role = localStorage.getItem('role')
-    if(role == 'Paciente'){
+    if(role == 'Admin'){
     this.pacienteform.enable();
     Swal.fire({
       position: 'top',

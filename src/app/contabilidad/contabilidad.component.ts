@@ -2,7 +2,6 @@ import { Component, Inject } from '@angular/core';
 import { FormBuilder, Validators } from '@angular/forms';
 import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
 import { MatTableDataSource } from '@angular/material/table';
-import { faPieChart } from '@fortawesome/free-solid-svg-icons';
 import { AuthService } from '../service/auth.service';
 import Swal from'sweetalert2';
 import { ToastrService } from 'ngx-toastr';
