@@ -1,10 +1,11 @@
 import { Component, Inject } from '@angular/core';
 import { FormBuilder, Validators } from '@angular/forms';
-import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
+import { MatDialogRef, MAT_DIALOG_DATA, MatDialog } from '@angular/material/dialog';
 import { MatTableDataSource } from '@angular/material/table';
 import { AuthService } from '../service/auth.service';
 import Swal from'sweetalert2';
 import { ToastrService } from 'ngx-toastr';
+import { EditpagoComponent } from '../editpago/editpago.component';
 @Component({
   selector: 'app-contabilidad',
   templateUrl: './contabilidad.component.html',
@@ -15,7 +16,10 @@ export class ContabilidadComponent {
   conta:any
   fecha:any
   pagos: any[]= []
-  constructor(private toastr: ToastrService,public dialogRef: MatDialogRef<ContabilidadComponent>,@Inject(MAT_DIALOG_DATA) public data:any, private service:AuthService, private builder:FormBuilder) 
+  constructor(private toastr: ToastrService,public dialogRef: MatDialogRef<ContabilidadComponent>,
+    @Inject(MAT_DIALOG_DATA) public data:any, private service:AuthService, private builder:FormBuilder,
+    private dialog: MatDialog
+  ) 
   {
     this.fecha= new Date().toISOString().split('T')[0];
     console.log(this.fecha)
@@ -45,6 +49,12 @@ export class ContabilidadComponent {
     }else{
       this.toastr.warning('No tienes permisos para realizar esta acción', 'Acción no permitida');
     }
+  }
+
+  editPago(element:any){
+    console.log(element)
+    this.dialog.open(EditpagoComponent, {data: {element}})
+
   }
   registrarPago(){
     

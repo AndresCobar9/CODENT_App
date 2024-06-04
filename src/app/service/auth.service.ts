@@ -8,7 +8,7 @@ import { Observable } from 'rxjs';
 export class AuthService {
 
   constructor(private http:HttpClient) { }
-  apiurl='https://api.codent.site'
+  apiurl='http://localhost:5000'
 
   GetAll(){
     return this.http.get(this.apiurl + '/user/userslist')
@@ -107,4 +107,8 @@ export class AuthService {
 
   GetUserrole(){
   return sessionStorage.getItem('userrole')!=null?sessionStorage.getItem('userrole')?.toString():''  }
+
+  editPago(pago:any){
+    return this.http.post(this.apiurl + '/pacientes/pagoedit', pago)
+  }
 }

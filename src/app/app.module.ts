@@ -31,6 +31,7 @@ import { CitapacienteComponent } from './citapaciente/citapaciente.component';
 import { TratamientosComponent } from './tratamientos/tratamientos.component';
 import { ContabilidadComponent } from './contabilidad/contabilidad.component';
 import { PacienteInfoComponent } from './paciente-info/paciente-info.component';
+import { EditpagoComponent } from './editpago/editpago.component';
 
 
 
@@ -61,7 +62,8 @@ const routes: Routes=[
     CitapacienteComponent,
     TratamientosComponent,
     ContabilidadComponent,
-    PacienteInfoComponent
+    PacienteInfoComponent,
+    EditpagoComponent
         
   ],
   imports: [
