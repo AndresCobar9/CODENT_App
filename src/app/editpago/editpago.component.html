@@ -1,0 +1,19 @@
+<div style="padding: 30px; width: 300px;">
+    <form [formGroup]="pagoForm" (ngSubmit)="onSubmit()">
+        <div class="form-group">
+        <label for="Descripcion">Descripcion</label>
+        <input type="text" class="form-control" id="Descripcion" formControlName="Descripcion">
+        </div>
+        <div class="form-group">
+        <label for="Credito">Precio</label>
+        <input type="number" class="form-control" id="Credito" formControlName="Credito">
+        </div>
+        <div class="form-group">
+        <label for="Debito">Abono</label>
+        <input type="number" class="form-control" id="Debito" formControlName="Debito">
+        </div>
+        <div style="width: 100%; display: flex; justify-content: center; align-items: center; padding-top: 20px;">
+        <button type="submit" class="btn btn-primary">Submit</button>
+        </div>
+    </form>
+</div>

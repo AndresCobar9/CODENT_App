@@ -107,4 +107,8 @@ export class AuthService {
 
   GetUserrole(){
   return sessionStorage.getItem('userrole')!=null?sessionStorage.getItem('userrole')?.toString():''  }
+
+  editPago(pago:any){
+    return this.http.post(this.apiurl + '/pacientes/pagoedit', pago)
+  }
 }
